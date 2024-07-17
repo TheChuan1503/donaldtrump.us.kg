@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+    <meta name="renderer" content="webkit">
+    <script src="lib/jq.js"></script>
+    <script>
+        lang={
+            'zh-CN':{
+                title:'川建国',
+                date:'当地2024-07-13 18:16:07',
+                'after-date':'美国前任总统',
+                info:'一枚子弹贯穿右耳上部，右耳被撕裂',
+                'slo.1':'战斗！',
+                'slo.1.style':'right: -21px;',
+                'slo.2':'奋力！',
+                'slo.2.style':'right: -7.25px;',
+                'slo.3':'无畏！'
+            },
+            'en-US':{
+                title:'Trump',
+                date:'2024-07-13 18:16:07',
+                'after-date':'Ex-US President',
+                info:'A bullet pierces through the upper part of the right ear, tearing it.',
+                'slo.1':'Fight!',
+                'slo.1.style':'right: -5px;',
+                'slo.2':'{slo.1}',
+                'slo.2.style':'right: -2px;',
+                'slo.3':'{slo.1}'
+            },
+            default:'en-US',
+            default_country:{
+                en:'en-US',
+                zh:'zh-CN'
+            }
+        }
+    </script>
+    <style>
+        * {
+            user-select: none;
+        }
+        body{
+            background-image: url('./bg.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100vw;
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+        }
+        .bottom{
+            position: fixed;
+            bottom: 0px;
+            left: 0px;
+            box-sizing: border-box;
+            padding: 24px;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,1));
+            width: 100%;
+            display: none;
+            overflow: hidden;
+        }
+        .bottom *{
+            position: relative;
+        }
+        .title{
+            font-size: 48px;
+            font-style: bold;
+            top: 144px;
+        }
+        .desc{
+            display: inline-block;
+            line-height: 20px;
+            margin-bottom: 16px;
+            margin-left: 8px;
+            top: -128px;
+        }
+        .date{
+            font-size: 20px;
+        }
+        .after-date{
+            font-size: 12px;
+        }
+        .info{
+            top: 128px;
+        }
+        .top{
+            position: fixed;
+            top: 16px;
+            right: 32px;
+            box-sizing: border-box;
+            color: white;
+            width: 100%;
+            overflow: hidden;
+            text-align: right;
+        }
+        .top *{
+            position: relative;
+        }
+        .slo{
+            top: -256px;
+        }
+        .slo-1{
+            font-size: 56px;
+        }
+        .slo-2{
+            font-size: 36px;
+            margin-top: 16px;
+        }
+        .slo-3{
+            font-size: 26px;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <div class="slo-1 slo" al-aplto="innerHTML:slo.1;style:slo.1.style">Fight!</div>
+        <div class="slo-2 slo" al-aplto="innerHTML:slo.2;style:slo.2.style">Fight!</div>
+        <div class="slo-3 slo" al="slo.3">Fight!</div>
+    </div>
+    <div class="bottom">
+        <span class="title" al="title">Trump</span>
+        <div class="desc"><span class="date" al="date">2024-07-13 18:16:07</span><br><span class="after-date" al="after-date">Ex-US President</span></div>
+        <br>
+        <span al="info" class="info">A bullet pierces through the upper part of the right ear, tearing it.</span>
+    </div>
+    
+    <script>
+        $('.bottom').fadeIn(function(){
+            $('.title').animate({
+                top:'0px'
+            })
+            $('.desc').animate({
+                top:'0px'
+            },'slow')
+            $('.info').animate({
+                top:'0px'
+            },900,function(){
+                $('.slo-3').animate({
+                    top:'0px'
+                },'fast',function(){
+                    $('.slo-2').animate({
+                        top:'0px'
+                    },function(){
+                        $('.slo-1').animate({
+                            top:'0px'
+                        })
+                    })
+                })
+            })
+        })
+    </script>
+    <script src="https://static.1503dev.top/1503dev/autolang/1.4.4/al.noyaml.js"></script>
+    <script>
+        al.setLangProp(lang)
+        al.load()
+    </script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
